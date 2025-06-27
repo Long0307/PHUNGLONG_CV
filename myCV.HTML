@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huu Long Phung - Fullstack Developer CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .avatar {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 20px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .avatar svg {
+            width: 80%;
+            height: 80%;
+            fill: white;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .contact-item i {
+            width: 16px;
+            height: 16px;
+            background: currentColor;
+            mask-size: contain;
+            mask-repeat: no-repeat;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: #f8fafc;
+            padding: 40px 30px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: #764ba2;
+        }
+
+        .objective {
+            background: #edf2f7;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .experience-item,
+        .project-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .experience-item:last-child,
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #718096;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .description {
+            color: #4a5568;
+        }
+
+        .description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .description li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            background: #667eea;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .skills-category {
+            margin-bottom: 25px;
+        }
+
+        .skills-category h4 {
+            color: #2d3748;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .school {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .cert-item {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #48bb78;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .cert-year {
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .language-level {
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        .interests {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .name {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar,
+            .content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: none;
+            }
+
+            .header {
+                background: #667eea !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="avatar">
+                    <img src="unnamed.png" alt="avatar" />
+                </div>
+                <h1 class="name">Phung Huu Long</h1>
+                <p class="title">Fullstack Developer</p>
+                <div class="contact-info">
+                    <div class="contact-item">Email: phunglongtn@gmail.com</div>
+                    <div class="contact-item">Phone: (+84) 375-769-686</div>
+                    <div class="contact-item">Facebook: https://www.facebook.com/ChuVann</div>
+                    <div class="contact-item">Github: https://github.com/Long0307</div>
+                    <div class="contact-item">Address: Hanoi, Vietnam</div>
+                    <div class="contact-item">Research Interest: Web developer, Laravel</div>
+                    <div class="contact-item">YouTube: https://www.youtube.com/@huulongphung170</div>
+                </div>
+            </div>
+        </header>
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h3 class="section-title">Technology Skills</h3>
+
+                    <div class="skills-category">
+                        <h4>Frontend</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Reactjs</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">JQUERY</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4>Backend</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JAVA</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4>Libraries and Frameworks for Web project</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Nodejs</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Spring Boot</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4>Libraries and Frameworks for Image Processing</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Keras</span>
+                            <span class="skill-tag">Tensorflow</span>
+                            <span class="skill-tag">Pytorch</span>
+                            <span class="skill-tag">Opencv</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4>DevOps & Tools</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Githup</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <div class="degree">Artificial Intelligence - UOU</div>
+                        <div class="school">University of Ulsan</div>
+                        <div class="duration">2023 - 2025</div>
+                        <div class="description">GPA: 3.5/4.5</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Information Technology - HUBT</div>
+                        <div class="school">Ha Noi University of Business and Technology</div>
+                        <div class="duration">2018 - 2022</div>
+                        <div class="description">GPA: 7.7/10</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Language</h3>
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">IELTS 5.5</span>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Hobby</h3>
+                    <div class="interests">
+                        Read technology books, contribute open source, play badminton, travel and explore culture
+                    </div>
+                </section>
+            </aside>
+
+            <main class="content">
+                <section class="section">
+                    <h3 class="section-title">Career Objective</h3>
+                    <div class="objective">
+Fullstack Developer with 1+ years of experience developing web applications with Laravel, Node.js, and modern technologies. Want to join a dynamic working environment to contribute to building technology products with positive impact. Besides, I want to contribute to projects using AI for the company.
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Work Experience</h3>
+
+                    <div class="experience-item">
+                        <div class="job-title">Junior Fullstack Developer</div>
+                        <div class="company">HTWAVE Technology Co., Ltd</div>
+                        <div class="duration">8/2024 - Current</div>
+                        <div class="location">Address: 44610 Engr, Bldg. 7-201, Daehack-Ro 93, Nam-gu, Ulsan, Korea</div> <br>
+                        <div class="description">
+                            <ul>
+                                <li>Improving the forest fire detection system using YOLOv5 for higher accuracy than the original model.</li>
+                                <li>Developing the car parking system with YOLOv5</li>
+                                <li>Developing the fall detection system using YOLOv5</li>
+                                <li>Developing Wind prediction system by Java Spring Boot and Python (Flask) 
+                                <li>Built the company's web system by Laravel and deployed those websites on the servers (using Ubuntu and Nginx). </li>
+                            </ul>
+                            <div class="tech-stack">PHP • Laravel • PYTHON • FLASK • YOLOv5 • HTML • CSS • JavaScript • Ubuntu • Nginx</div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Junior Fullstack Developer</div>
+                        <div class="company">TOSY ROBOTICS JSC COMPANY (https://www.tosyrobotics.com/)</div>
+                        <div class="duration">06/2022 – 08/2023</div>
+                        <div class="location">Address: Starcity Building, 23 Le Van Luong, Thanh Xuan, Hanoi</div> <br>
+                        <div class="description">
+                            <ul>
+                                <li>Research, develop and manager web Manufacturing Execution System projects by Laravel.</li>
+                                <li>YOLOv3 and PYTHON (FLASK) was applied to detect Amazon code and the company's products.</li>
+                                <li>Keras was applied to build the fire detection system.</li>
+                            </ul>
+                            <div class="tech-stack">Laravel • PHP • MySQL • Python • YOLOv3  • FLASK • Keras</div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Fresher Developer</div>
+                        <div class="company">ONLINE VIET NAM COMPANY LIMITED</div>
+                        <div class="duration">5/2021 – 04/2022</div>
+                        <div class="location">Address: No. 173 Xuan Thuy Street, Dich Vong Hau Ward, Cau Giay District, Hanoi City, Vietnam.</div> <br>
+                        <div class="description">
+                            <ul>
+                                <li>Build an ecommerce website using PHP (Laravel).</li>
+                                <li>Optimize SEO and accessibility for company website.</li>
+                                <li>Maintain và update content management system.</li>
+                            </ul>
+                            <div class="tech-stack">HTML5 • CSS3 • JavaScript • Jquery • PHP • Laravel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Fresher Developer</div>
+                        <div class="company">NODEJS VIETNAM TECHONOLOGY COMPANY (https://nodemy.vn/)</div>
+                        <div class="duration">12/2020 – 05/2021</div>
+                        <div class="location">Address: Villa BT3, Block AIV, Ha Dinh New Urban Area, Tan Trieu Commune, Thanh Tri District, Hanoi City, Vietnam</div> <br>
+                        <div class="description">
+                            <ul>
+                                <li>Creating a training website including many NODEJS courses and managing internships and staff at company.</li>
+                                <li>Optimize SEO and accessibility for company website.</li>
+                                <li>Maintain và update content management system</li>
+                            </ul>
+                            <div class="tech-stack">HTML5 • CSS3 • JavaScript • Nodejs • Reactjs • Expressjs </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Fresher Developer</div>
+                        <div class="company">TOVY CORPORATION</div>
+                        <div class="duration">06/2020 – 02/2021</div>
+                        <div class="location">Address: Intracom Building - 82 Dich Vong Hau, Hanoi, Vietnam</div> <br>
+                        <div class="description">
+                            <ul>
+                                <li>Researching Python OOP and gathering data by selenium.</li>
+                                <li>Using PHP LARAVEL and python to create web like https://apkcombo.com/vi/.</li>
+                                <li>Optimizing website by some SEO tools like https://pagespeed.web.dev/ and so on. </li>
+                                <li>Deploying the company’s website on the CentOS server.</li>
+                            </ul>
+                            <div class="tech-stack">HTML5 • CSS3 • JavaScript • Python • Laravel • CentOS</div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- <section class="section">
+                    <h3 class="section-title">Project</h3>
+
+                    <div class="project-item">
+                        <div class="job-title">TaskFlow - Ứng dụng quản lý công việc</div>
+                        <div class="company">GitHub: github.com/nguyenvanminh/taskflow</div>
+                        <div class="description">
+                            <ul>
+                                <li>Full-stack web application với real-time collaboration features</li>
+                                <li>Authentication system với JWT và real-time updates với Socket.io</li>
+                                <li>Responsive design với Tailwind CSS</li>
+                            </ul>
+                            <div class="tech-stack">React • TypeScript • Node.js • PostgreSQL • Socket.io</div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title">EcoShop - Marketplace bền vững</div>
+                        <div class="company">GitHub: github.com/nguyenvanminh/ecoshop</div>
+                        <div class="description">
+                            <ul>
+                                <li>E-commerce platform tập trung vào sản phẩm thân thiện môi trường</li>
+                                <li>Tích hợp Stripe payment và Sanity CMS</li>
+                                <li>Admin dashboard với analytics và order management</li>
+                            </ul>
+                            <div class="tech-stack">Next.js • Stripe • Sanity CMS • Vercel</div>
+                        </div>
+                    </div>
+                </section> -->
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Phung Huu Long</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background: #eef1f5;
+      color: #333;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .left {
+      background: linear-gradient(135deg, #003366, #004080);
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .left img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid #fff;
+    }
+    .left h2 {
+      margin-bottom: 5px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .left p.subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+    .left .section {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    .left .section h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .left .section p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .skill-bar {
+      background: rgba(255,255,255,0.3);
+      border-radius: 5px;
+      margin: 6px 0 12px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: #00c3ff;
+    }
+    .right {
+      padding: 40px;
+    }
+    .right h2 {
+      color: #003366;
+      font-size: 20px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 6px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .item {
+      margin-bottom: 20px;
+    }
+    .item h3 {
+      font-size: 16px;
+      color: #222;
+      margin-bottom: 4px;
+    }
+    .item span {
+      font-size: 12px;
+      color: #777;
+    }
+    .item p {
+      font-size: 13px;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="unnamed.png" alt="avatar" />
+      <h2>Phùng Hữu Long</h2>
+      <p class="subtitle">AI Engineer & Fullstack Developer</p>
+
+      <div class="section">
+        <h3>Contact</h3>
+        <p>Email: long@example.com</p>
+        <p>Điện thoại: 0987654321</p>
+        <p>GitHub: github.com/phunglong</p>
+        <p>Địa chỉ: Hà Nội, Việt Nam</p>
+      </div>
+
+      <div class="section">
+        <h3>Kỹ năng</h3>
+        <p>Python</p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div>
+        <p>JavaScript</p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div>
+        <p>Flask / Django</p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div>
+        <p>ReactJS</p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%"></div></div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="section">
+        <h2>About</h2>
+        <p>Huu Long Phung received a Bachelor of Software Engineering from the Ha Noi University of Ha Noi University of Business and Technology, Ha noi, Vietnam, in 2022; a Master’s degree in Electrical Engineering from the Department of Electrical, Electronic, and Computer Engineering, University of Ulsan, Ulsan, South Korea, in 2025. After earning his Bachelor’s degree, he currently is with the Ubiqitous Computing Lab (Ubicom Lab), Department of Electrical, Electronic, and Computer Engineering, University of Ulsan. His research interests include object detection and recognition in computer vision based on machine learning. In addition, he is also working as a fullstack developer.</p>
+      </div>
+
+      <div class="section">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Thạc sĩ Khoa học Máy tính - KAIST</h3>
+          <span>2023 - 2025</span>
+          <p>Chuyên sâu về trí tuệ nhân tạo và học sâu.</p>
+        </div>
+        <div class="item">
+          <h3>Cử nhân CNTT - Đại học Bách khoa Hà Nội</h3>
+          <span>2018 - 2022</span>
+          <p>Loại giỏi, GPA 3.6/4.0</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Kinh nghiệm</h2>
+        <div class="item">
+          <h3>Kỹ sư phần mềm - Global Zeus Vina</h3>
+          <span>2024 - nay</span>
+          <p>Phát triển hệ thống giám sát hành vi vi phạm giao thông sử dụng YOLOv5, Flask và MySQL.</p>
+        </div>
+        <div class="item">
+          <h3>Dự án phát hiện khói rừng</h3>
+          <span>2023</span>
+          <p>Xây dựng hệ thống cảnh báo cháy rừng bằng YOLOv5 kết hợp truyền tín hiệu cảnh báo thời gian thực.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Ngôn ngữ</h2>
+        <p>🇻🇳 Tiếng Việt (Bản ngữ)</p>
+        <p>🇬🇧 Tiếng Anh (IELTS 7.5)</p>
+        <p>🇰🇷 Tiếng Hàn (Sơ cấp - trung cấp)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
